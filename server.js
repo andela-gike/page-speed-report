@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 4000;
 
 const server = http.createServer((request, response) => {
    const baseURL = 'http://' + request.headers.host + '/';
-   console.log(request.body);
+   console.log(request, 'here');
   const parsedUrl = new URL(request.url, baseURL);
   // const trimedPath = parsedUrl.pathname.replace(/^\/+|\/+$/g, '');
   console.log('request ', parsedUrl);
