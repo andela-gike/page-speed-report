@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 4000;
 
 const server = http.createServer((request, response) => {
    const baseURL = 'http://' + request.headers.host + '/';
-   console.log(request);
+   console.log(request.body);
   const parsedUrl = new URL(request.url, baseURL);
   // const trimedPath = parsedUrl.pathname.replace(/^\/+|\/+$/g, '');
   console.log('request ', parsedUrl);
@@ -19,7 +19,7 @@ const server = http.createServer((request, response) => {
   const method = request.method.toLowerCase();
 
   response.writeHead(200, {"Content-Type": "application/json"});
-  response.end('Hello world'/n);
+  response.end('Hello world');
 })
 
 server.listen(PORT, () => {
